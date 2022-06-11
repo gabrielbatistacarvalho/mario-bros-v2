@@ -41,6 +41,9 @@ const loop = setInterval(() => {
 
 }, 10);
 
+//const audio = document.body.getElementById('hdfAudio').audio;
+//audio.play();
+
 document.body.addEventListener('keypress', () =>{
     var x = event.keyCode;
     if(x == '0032')
