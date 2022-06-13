@@ -1,6 +1,10 @@
-const mario  = document.querySelector('.mario');
-const pipe   = document.querySelector('.pipe');
-const clouds = document.querySelector('.clouds');
+const mario      = document.querySelector('.mario');
+const pipe       = document.querySelector('.pipe');
+const clouds     = document.querySelector('.clouds');
+const audio      = document.getElementById('hdfAudio');
+const audio_g_o  = document.getElementById('hdfAudioGameOver');
+
+audio.play();
 
 const jump = () => {
 
@@ -33,6 +37,8 @@ const loop = setInterval(() => {
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
 
+        audio.pause();
+        audio_g_o.play();
         document.getElementById('txtRestart').style.display = 'block';
         document.getElementById('txtRestart').focus();
 
@@ -40,9 +46,6 @@ const loop = setInterval(() => {
     }
 
 }, 10);
-
-//const audio = document.body.getElementById('hdfAudio').audio;
-//audio.play();
 
 document.body.addEventListener('keypress', () =>{
     var x = event.keyCode;
