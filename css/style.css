@@ -32,10 +32,22 @@
     animation: jump 500ms ease-out;
 }
 
+.jump-kill {
+    animation: jump-kill 1000ms ease-out;
+}
+
 .clouds {
     position: absolute;
     width: 550px;
     animation: clouds-animation 20s infinite linear;
+}
+
+.botao-modal-start {
+    align-items: center;
+}
+
+.botao-start {
+    align-items: center;
 }
 
 @keyframes pipe-animation {
@@ -77,5 +89,35 @@
 
     to {
         right: 100%;
+    }
+}
+
+@keyframes jump-kill {
+    0% {
+        bottom: 0;
+    }
+
+    20% {
+        bottom: 180px;
+    }
+
+    30% {
+        bottom: 180px;
+    }
+    
+    40% {
+        bottom: 180px;
+    }
+    
+    60% {
+        bottom: 0;
+    }
+
+    80% {
+        bottom: -180px;
+    }
+
+    100% {
+        bottom: -360px;
     }
 }

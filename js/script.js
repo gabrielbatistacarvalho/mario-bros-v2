@@ -4,7 +4,9 @@ const clouds     = document.querySelector('.clouds');
 const audio      = document.getElementById('hdfAudio');
 const audio_g_o  = document.getElementById('hdfAudioGameOver');
 
-audio.play();
+pipe.style.animationPlayState   = 'paused';
+clouds.style.animationPlayState = 'paused';
+mario.style.display             = 'none';
 
 const jump = () => {
 
@@ -16,6 +18,16 @@ const jump = () => {
     }, 500);
 }
 
+const jumpKill = () => {
+
+    mario.classList.add('jump-kill');
+    setTimeout(() => {
+
+        mario.style.bottom = '-360px';
+
+    }, 1000); 
+}
+
 const loop = setInterval(() => {
 
     const marioPosition  = +window.getComputedStyle(mario).bottom.replace('px', '');
@@ -24,19 +36,19 @@ const loop = setInterval(() => {
     
     if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
 
-        mario.style.animation = 'none';
-        mario.style.bottom = `${marioPosition}px`;
-
-        pipe.style.animation = 'none';
+        //mario.style.bottom = `${marioPosition}px`;
+        
+        pipe.style.animationPlayState = 'paused';
         pipe.style.left = `${pipePosition}px`;
 
-        clouds.style.animation = 'none';
+        clouds.style.animationPlayState = 'paused';
         clouds.style.left = `${cloudsPosition}px`;
 
         mario.src = './images/game-over.png';
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
 
+        jumpKill();
         audio.pause();
         audio_g_o.play();
         document.getElementById('txtRestart').style.display = 'block';
@@ -47,10 +59,21 @@ const loop = setInterval(() => {
 
 }, 10);
 
-document.body.addEventListener('keypress', () =>{
-    var x = event.keyCode;
-    if(x == '0032')
-    {
-        jump();
-    }
-});
+
+function start ()
+{
+    document.getElementById('start').style.display = 'none';
+    pipe.style.animationPlayState   = 'running';
+    clouds.style.animationPlayState = 'running';
+    mario.style.display             = 'block';
+
+    audio.play();
+
+    document.body.addEventListener('keypress', () =>{
+        var x = event.keyCode;
+        if(x == '0032')
+        {
+            jump();
+        }
+    });
+}
