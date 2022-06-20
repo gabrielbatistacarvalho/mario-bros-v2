@@ -6,6 +6,9 @@ const audio_g_o  = document.getElementById('hdfAudioGameOver');
 const placar     = document.getElementById('txtPlacar');
 
 var contador     = 0;
+var pontos       = 0;
+
+document.getElementById('txtStart').focus();
 
 pipe.style.animationPlayState   = 'paused';
 clouds.style.animationPlayState = 'paused';
@@ -58,12 +61,10 @@ const loop = setInterval(() => {
         document.getElementById('txtRestart').focus();
 
         clearInterval(loop);
+        stop_placar();
     }
-    contador++;
-    placar.innerHTML = contador;
 
 }, 10);
-
 
 function start ()
 {
@@ -81,4 +82,21 @@ function start ()
             jump();
         }
     });
+
+    play_placar();
 }
+
+function  play_placar() 
+{
+     pontos = setInterval(() => {
+        contador++;
+        placar.innerHTML = contador;
+    
+    }, 10);
+}
+
+function stop_placar() 
+{
+    clearInterval(pontos);
+}
+

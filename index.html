@@ -29,7 +29,7 @@
         <img src="./images/pipe.png" class="pipe">
         <audio src="./songs/Super_Mario_Bros_3.mp3" id="hdfAudio" style="display: none;"></audio>
         <audio src="./songs/Super_Mario_Bros_3_Game_Over.mp3" id="hdfAudioGameOver" style="display: none;"></audio>
-        <label name="txtPlacar" id="txtPlacar" class="placar">0</label>
+        <label  name="txtPlacar" id="txtPlacar" class="placar">0</label>
 
         <input type="submit" name="txtRestart" id="txtRestart" value="Restart" onclick="location.href='./'" style="display: none;">
     </div>
@@ -39,17 +39,17 @@
 <div class="modal fade botao-modal-start" id="modalStart" tabindex="-1" role="dialog" aria-labelledby="modalStart" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalStart">Press start to play...</h5>
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-footer botao-modal-start" style="align-content: center;";>
+        <div class="modal-body">
+          <tr class="botao-start">  
+              <td class="botao-start">
+                 <h5 class="modal-title" id="modalStart">Press start to play...</h5>
+              </td>
+          </tr>
+          <tr class="botao-start">  
             <td class="botao-start">
-                 <button type="button" class="botao-start" name="txtStart" id="txtStart" data-dismiss="modal" onclick="start();">start</button>
-                 <script>
-                  document.getElementById('txtStart').focus();</script>
-            </td>
+                  <button type="submit" class="botao-start" name="txtStart" id="txtStart" data-dismiss="modal" onclick="start();">start</button>
+              </td>
+            </tr>
         </div>
       </div>
     </div>
