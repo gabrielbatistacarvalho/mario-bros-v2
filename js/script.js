@@ -3,6 +3,9 @@ const pipe       = document.querySelector('.pipe');
 const clouds     = document.querySelector('.clouds');
 const audio      = document.getElementById('hdfAudio');
 const audio_g_o  = document.getElementById('hdfAudioGameOver');
+const placar     = document.getElementById('txtPlacar');
+
+var contador     = 0;
 
 pipe.style.animationPlayState   = 'paused';
 clouds.style.animationPlayState = 'paused';
@@ -56,13 +59,15 @@ const loop = setInterval(() => {
 
         clearInterval(loop);
     }
+    contador++;
+    placar.innerHTML = contador;
 
 }, 10);
 
 
 function start ()
 {
-    document.getElementById('start').style.display = 'none';
+    document.getElementById('txtStart').style.display = 'none';
     pipe.style.animationPlayState   = 'running';
     clouds.style.animationPlayState = 'running';
     mario.style.display             = 'block';
