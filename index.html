@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js" defer></script>
 
-    <title>Mario Jump</title>
+    <title class="fonte">Mario Jump</title>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -21,6 +21,16 @@
 })
     </script>
     
+    <table width="100%" style="background-color: #87CEEB;">
+      <tr>
+        <td align="right">
+          <span name="txtScore" style="margin-left: 200px; font-size: 14;" id="txtScore" class="placar fonte">score:</span>
+        </td>
+        <td align="left">
+          <span name="txtPlacar" style="margin-right: 200px; font-size: 14;" id="txtPlacar" class="placar fonte">0</span>
+        </td>
+      </tr>
+    </table>
 
     <div class="game-board">
 
@@ -29,7 +39,6 @@
         <img src="./images/pipe.png" class="pipe">
         <audio src="./songs/Super_Mario_Bros_3.mp3" id="hdfAudio" style="display: none;"></audio>
         <audio src="./songs/Super_Mario_Bros_3_Game_Over.mp3" id="hdfAudioGameOver" style="display: none;"></audio>
-        <label  name="txtPlacar" id="txtPlacar" class="placar">0</label>
 
         <input type="submit" name="txtRestart" id="txtRestart" value="Restart" onclick="location.href='./'" style="display: none;">
     </div>
@@ -42,12 +51,12 @@
         <div class="modal-body">
           <tr class="botao-start">  
               <td class="botao-start">
-                 <h5 class="modal-title" id="modalStart">Press start to play...</h5>
+                 <h5 class="modal-title fonte" id="modalStart">Press start to play...</h5>
               </td>
           </tr>
           <tr class="botao-start">  
             <td class="botao-start">
-                  <button type="submit" class="botao-start" name="txtStart" id="txtStart" data-dismiss="modal" onclick="start();">start</button>
+                  <button type="submit" class="botao-start fonte" name="txtStart" id="txtStart" data-dismiss="modal" onclick="start();">start</button>
               </td>
             </tr>
         </div>
